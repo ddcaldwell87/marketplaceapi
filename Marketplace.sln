@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketplace.WebApi", "Marketplace.WebApi\Marketplace.WebApi.csproj", "{385E1BB9-FF4D-4946-BE27-3D2BC174698D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{385E1BB9-FF4D-4946-BE27-3D2BC174698D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385E1BB9-FF4D-4946-BE27-3D2BC174698D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385E1BB9-FF4D-4946-BE27-3D2BC174698D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385E1BB9-FF4D-4946-BE27-3D2BC174698D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE655B60-E731-42D0-95C3-9A194A45F741}
+	EndGlobalSection
+EndGlobal
