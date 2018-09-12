@@ -18,7 +18,6 @@ namespace Marketplace.Data
         public bool OnSale { get; set; }
         public string ProductCategory { get; set; }
         public string ProductDescription { get; set; }
-        //TODO: add product image property
         public int RetailerId { get; set; }
         public Guid OwnerId { get; set; }
         public byte[] Image { get; set; }

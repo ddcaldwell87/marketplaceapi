@@ -16,6 +16,7 @@ namespace Marketplace.Data
         public string RetailerEmail { get; set; }
         public string RetailerPhone { get; set; }
         //TODO: add retailer image property
+        public byte[] Image { get; set; }
         public Guid OwnerId { get; set; }
     }
 }
