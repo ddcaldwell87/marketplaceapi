@@ -11,15 +11,16 @@ namespace Marketplace.Data
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int ProductUpc { get; set; }
-        public decimal ProductPrice { get; set; }
-        public decimal ProductCost { get; set; }
-        public decimal ProductProfit { get; set; }
-        public int ProductQuantity { get; set; }
+        public double ProductPrice { get; set; }
+        public double ProductCost { get; set; }
+        public double ProductProfit { get; set; }
+        public double ProductQuantity { get; set; }
         public bool OnSale { get; set; }
         public string ProductCategory { get; set; }
         public string ProductDescription { get; set; }
         //TODO: add product image property
         public int RetailerId { get; set; }
         public Guid OwnerId { get; set; }
+        public byte[] Image { get; set; }
     }
 }
