@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Models
+namespace Marketplace.Services
 {
-    public class Class1
+     public class CustomerService
     {
     }
 }
