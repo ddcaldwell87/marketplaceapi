@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Marketplace.WebApi.Providers;
 using Marketplace.WebApi.Models;
+using Marketplace.Data;
 
 namespace Marketplace.WebApi
 {
