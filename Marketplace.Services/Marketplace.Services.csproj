@@ -82,10 +82,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Marketplace.Contracts\Marketplace.Contracts.csproj">
-      <Project>{e47ee54c-bc02-4351-a196-0fc7d02020cf}</Project>
-      <Name>Marketplace.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Marketplace.Data\Marketplace.Data.csproj">
       <Project>{a90095b7-e715-4c65-bf37-73b0182bd35d}</Project>
       <Name>Marketplace.Data</Name>

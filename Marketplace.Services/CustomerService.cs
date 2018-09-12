@@ -11,6 +11,8 @@ namespace Marketplace.Services
     public class CustomerService
     {
         private readonly Guid _userId;
+        private readonly int _CustomerID;   
+
 
         public CustomerService(Guid userId)
         {
@@ -35,6 +37,48 @@ namespace Marketplace.Services
                         ShippingInformation = entity.ShippingInformation,
                         CustomerPhone = entity.CustomerPhone,
                     };
+            }
+        }
+        public bool CreateCustomer(CustomerCreate model)
+        {
+            var entity =
+               new Customer
+               {
+                   CustomerId = _CustomerID,
+                   CustomerFirstName = model.CustomerFirstName,
+                   CustomerLastName = model.CustomerLastName,
+                   CustomerEmail = model.CustomerEmail,
+                   CustomerPhone = model.CustomerPhone,
+               };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Customers.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
+
+        public ICollection<CustomerListItem> GetAllCustomers()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var customers =
+                    ctx
+                        .Customers
+                        .Select(
+                            e => new CustomerListItem()
+                            {
+                                
+                                CustomerId = e.CustomerId,
+                                CustomerFirstName= e.CustomerFirstName,
+                                CustomerLastName= e.CustomerLastName,
+                                CustomerEmail = e.CustomerEmail,
+                                CustomerPhone = e.CustomerPhone,
+                            });
+
+                return customers.ToList();
             }
         }
     }

@@ -10,7 +10,7 @@ namespace Marketplace.Data
     public class ShippingInformation
     {
         public string CustomerStreetAddress { get; set; }
-
+        
         public string State { get; set; }
 
         public string City { get; set; }
