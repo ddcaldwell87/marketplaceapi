@@ -1,25 +1,23 @@
-﻿using System;
+﻿using Marketplace.Data;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Data
+namespace Marketplace.Models
 {
-    public class Customer
+    public class CustomerDetails
     {
-        [Key]
         public int CustomerId { get; set; }
-        [Required]
         public string CustomerFirstName { get; set; }
-        [Required]
         public string CustomerLastName { get; set; }
-        [Required]
         public string CustomerEmail { get; set; }
-        [Required]
+        public string CustomerStreetAddress { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public string Zip { get; set; }
         public string CustomerPhone { get; set; }
-        
         public ShippingInformation ShippingInformation { get; set; }
         public Guid OwnerId { get; set; }
     }

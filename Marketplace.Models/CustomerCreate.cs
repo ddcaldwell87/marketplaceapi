@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Data
+namespace Marketplace.Models
 {
-    public class Customer
+     public class CustomerCreate
     {
-        [Key]
+        
         public int CustomerId { get; set; }
         [Required]
         public string CustomerFirstName { get; set; }
@@ -19,8 +19,14 @@ namespace Marketplace.Data
         public string CustomerEmail { get; set; }
         [Required]
         public string CustomerPhone { get; set; }
-        
-        public ShippingInformation ShippingInformation { get; set; }
-        public Guid OwnerId { get; set; }
+        [Required]
+        public string CustomerStreetAddress { get; set; }
+        [Required]
+        public string State { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string Zip { get; set; }
+
     }
 }

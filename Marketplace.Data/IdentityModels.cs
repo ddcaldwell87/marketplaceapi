@@ -1,4 +1,7 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -18,9 +21,12 @@ namespace Marketplace.Data
         }
     }
 
+    //TODO: Set Up Identity Models from elevennote
+
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public ApplicationDbContext() 
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
@@ -29,5 +35,35 @@ namespace Marketplace.Data
         {
             return new ApplicationDbContext();
         }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Retailer> Retailers { get; set; }
+        public DbSet<Admin> Admin { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
+            modelBuilder
+                .Configurations
+                .Add(new IdentityUserLoginConfiguration())
+                .Add(new IdentityUserRolerConfiguation());
+        }
     }
+
+    public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
+    {
+        public IdentityUserLoginConfiguration()
+        {
+            HasKey(iul => iul.UserId);
+        }
+    }
+    public class IdentityUserRolerConfiguation : EntityTypeConfiguration<IdentityUserRole>
+    {
+        public IdentityUserRolerConfiguation()
+        {
+            HasKey(iur => iur.RoleId);
+        }
+    }
+
 }
