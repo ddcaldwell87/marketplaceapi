@@ -18,17 +18,9 @@ namespace Marketplace.Data
         [Required]
         public string CustomerEmail { get; set; }
         [Required]
-        public string CustomerStreetAddress { get; set; }
-        [Required]
-        public string State { get; set; }
-        [Required]
-        public string City { get; set; }
-        [Required]
-        public string Zip { get; set; }
-        [Required]
         public string CustomerPhone { get; set; }
         
-        public string ShippingInformation { get; set; }
+        public ShippingInformation ShippingInformation { get; set; }
         public Guid OwnerId { get; set; }
     }
 }

@@ -23,22 +23,17 @@ namespace Marketplace.Services
             {
                 var entity =
                     ctx
-                        .Customer
-                        .Single(e => e.CustomerID == CustomerId && e.OwnerId == _userId);
+                        .Customers
+                        .Single(e => e.CustomerId == CustomerId && e.OwnerId == _userId);
                 return
                     new CustomerDetails
                     {
-                        CustomerId = entity.NoteId,
-                        CustomerFirstName = entity.Title,
-                        CUstomerLastName = entity.Content,
-                        CustomerEmail = entity.CreatedUtc,
-                        CustomerStreetAddress = entity.ModifiedUtc,
-                        State = entity.State,
-                        City = entity.City,
-                        Zip = entity.Zip,
+                        CustomerId = entity.CustomerId,
+                        CustomerFirstName = entity.CustomerFirstName,
+                        CustomerLastName = entity.CustomerLastName,
+                        CustomerEmail = entity.CustomerEmail,
+                        ShippingInformation = entity.ShippingInformation,
                         CustomerPhone = entity.CustomerPhone,
-                        ShippingInformation = $"{entity.CustomerFirstName}" + $"{entity.CustomerLastName} \n" + $"{entity.CustomerStreetAddress}\n" + $"{entity.City}" + ", " + $"{entity.State}" + "" + $"{entity.Zip}",
-
                     };
             }
         }
