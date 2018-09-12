@@ -14,7 +14,7 @@ namespace Marketplace.Data
         [Required]
         public string CustomerFirstName { get; set; }
         [Required]
-        public string CUstomerLastName { get; set; }
+        public string CustomerLastName { get; set; }
         [Required]
         public string CustomerEmail { get; set; }
         [Required]

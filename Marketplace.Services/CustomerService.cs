@@ -1,4 +1,5 @@
 ﻿using Marketplace.Models;
+using Marketplace.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Marketplace.Services
 {
-     public class CustomerService
+    public class CustomerService
     {
         private readonly Guid _userId;
 
-        public NoteService(Guid userId)
+        public CustomerService(Guid userId)
         {
             _userId = userId;
         }
@@ -22,7 +23,7 @@ namespace Marketplace.Services
             {
                 var entity =
                     ctx
-                        .Notes
+                        .Customer
                         .Single(e => e.CustomerID == CustomerId && e.OwnerId == _userId);
                 return
                     new CustomerDetails
@@ -36,10 +37,7 @@ namespace Marketplace.Services
                         City = entity.City,
                         Zip = entity.Zip,
                         CustomerPhone = entity.CustomerPhone,
-                        ShippingInformation = entity.
-
-
-
+                        ShippingInformation = $"{entity.CustomerFirstName}" + $"{entity.CustomerLastName} \n" + $"{entity.CustomerStreetAddress}\n" + $"{entity.City}" + ", " + $"{entity.State}" + "" + $"{entity.Zip}",
 
                     };
             }
