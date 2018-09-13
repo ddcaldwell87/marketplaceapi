@@ -18,7 +18,16 @@ namespace Marketplace.Models.Customer
         public string City { get; set; }
         public string Zip { get; set; }
         public string CustomerPhone { get; set; }
-        public ShippingInformation ShippingInformation { get; set; }
+        private string _shippingInformation;
+        public string ShippingInformation
+        {
+            get { return _shippingInformation; }
+            set
+            {
+                _shippingInformation = $"{CustomerStreetAddress}\n" +
+                                       $"{City}, {State} {Zip}";
+            }
+        }
         public Guid OwnerId { get; set; }
     }
 }

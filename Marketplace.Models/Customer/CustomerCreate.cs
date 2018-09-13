@@ -27,6 +27,16 @@ namespace Marketplace.Models.Customer
         public string City { get; set; }
         [Required]
         public string Zip { get; set; }
+        private string _shippingInformation;
+        public string ShippingInformation
+        {
+            get { return _shippingInformation; }
+            set
+            {
+                _shippingInformation = $"{CustomerStreetAddress}\n" +
+                                       $"{City}, {State} {Zip}";
+            }
+        }
 
     }
 }
