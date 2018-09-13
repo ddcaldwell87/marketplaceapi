@@ -11,5 +11,6 @@ namespace Marketplace.Data
     {
         [Key]
         public int AdminId { get; set; }
+        //TODO: add more props
     }
 }
