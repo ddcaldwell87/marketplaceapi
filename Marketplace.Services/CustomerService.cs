@@ -40,6 +40,28 @@ namespace Marketplace.Services
                     };
             }
         }
+
+        public bool UpdateCustomer(CustomerEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
+                entity.CustomerFirstName = model.CustomerFirstName;
+                entity.CustomerLastName = model.CustomerLastName;
+                entity.CustomerEmail = model.CustomerEmail;
+                entity.CustomerPhone = model.CustomerPhone;
+                entity.CustomerStreetAddress = model.CustomerStreetAddress;
+                entity.City = model.City;
+                entity.State = model.State;
+                entity.Zip = model.Zip;
+                entity.ShippingInformation = $"{model.CustomerStreetAddress}/n" + $"{model.City}, {model.State} {model.Zip}";
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
         public bool CreateCustomer(CustomerCreate model)
         {
             var entity =
@@ -58,8 +80,18 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-
+        public bool DeleteCustomer(int customerid)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == customerid && e.OwnerId == _userId);
+                ctx.Customers.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
         public ICollection<CustomerListItem> GetAllCustomers()
         {
@@ -77,6 +109,7 @@ namespace Marketplace.Services
                                 CustomerLastName= e.CustomerLastName,
                                 CustomerEmail = e.CustomerEmail,
                                 CustomerPhone = e.CustomerPhone,
+                                ShippingInformation = $"{e.CustomerStreetAddress}/n" + $"{e.City}, {e.State} {e.Zip}"
                             });
 
                 return customers.ToList();
