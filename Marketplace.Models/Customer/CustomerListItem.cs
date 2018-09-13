@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Models
+namespace Marketplace.Models.Customer
 {
      public class CustomerListItem
     {   

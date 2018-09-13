@@ -83,16 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marketplace.Data\Marketplace.Data.csproj">
-      <Project>{a90095b7-e715-4c65-bf37-73b0182bd35d}</Project>
+      <Project>{A90095B7-E715-4C65-BF37-73B0182BD35D}</Project>
       <Name>Marketplace.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marketplace.Models\Marketplace.Models.csproj">
-      <Project>{849e2eb4-c397-45eb-bf0f-05bd286a726d}</Project>
+      <Project>{849E2EB4-C397-45EB-BF0F-05BD286A726D}</Project>
       <Name>Marketplace.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Marketplace.WebApi\Marketplace.WebApi.csproj">
-      <Project>{385e1bb9-ff4d-4946-be27-3d2bc174698d}</Project>
-      <Name>Marketplace.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

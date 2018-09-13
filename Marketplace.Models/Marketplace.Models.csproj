@@ -74,9 +74,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerCreate.cs" />
-    <Compile Include="CustomerDetails.cs" />
-    <Compile Include="CustomerListItem.cs" />
+    <Compile Include="Customer\CustomerCreate.cs" />
+    <Compile Include="Customer\CustomerDetails.cs" />
+    <Compile Include="Customer\CustomerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,10 +87,6 @@
     <ProjectReference Include="..\Marketplace.Data\Marketplace.Data.csproj">
       <Project>{A90095B7-E715-4C65-BF37-73B0182BD35D}</Project>
       <Name>Marketplace.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Marketplace.WebApi\Marketplace.WebApi.csproj">
-      <Project>{385e1bb9-ff4d-4946-be27-3d2bc174698d}</Project>
-      <Name>Marketplace.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

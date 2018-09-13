@@ -234,6 +234,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -339,8 +340,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marketplace.Data\Marketplace.Data.csproj">
-      <Project>{a90095b7-e715-4c65-bf37-73b0182bd35d}</Project>
+      <Project>{A90095B7-E715-4C65-BF37-73B0182BD35D}</Project>
       <Name>Marketplace.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marketplace.Models\Marketplace.Models.csproj">
+      <Project>{849E2EB4-C397-45EB-BF0F-05BD286A726D}</Project>
+      <Name>Marketplace.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marketplace.Services\Marketplace.Services.csproj">
+      <Project>{6B7EED7F-E790-48E2-B3DF-D6AF0170E682}</Project>
+      <Name>Marketplace.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

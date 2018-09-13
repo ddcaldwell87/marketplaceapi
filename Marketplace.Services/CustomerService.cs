@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Marketplace.Models.Customer;
 
 namespace Marketplace.Services
 {
     public class CustomerService
     {
         private readonly Guid _userId;
-        private readonly int _CustomerID;   
+        private readonly int _customerID;   
 
 
         public CustomerService(Guid userId)
@@ -19,14 +20,14 @@ namespace Marketplace.Services
             _userId = userId;
         }
 
-        public CustomerDetails GetCustomerById(int CustomerId)
+        public CustomerDetails GetCustomerById(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == CustomerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
                 return
                     new CustomerDetails
                     {
@@ -44,7 +45,7 @@ namespace Marketplace.Services
             var entity =
                new Customer
                {
-                   CustomerId = _CustomerID,
+                   CustomerId = _customerID,
                    CustomerFirstName = model.CustomerFirstName,
                    CustomerLastName = model.CustomerLastName,
                    CustomerEmail = model.CustomerEmail,
