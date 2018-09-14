@@ -19,6 +19,21 @@ namespace Marketplace.Services
             _userId = userId;
         }
 
+        public IEnumerable<Customer> GetCustomers()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> GetProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Retailer> GetRetailers()
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<IdentityRole> GetRolesList()
         {
             using (var ctx = new ApplicationDbContext())

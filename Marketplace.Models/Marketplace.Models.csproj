@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminUserCreate.cs" />
     <Compile Include="Customer\CustomerEdit.cs" />
     <Compile Include="Customer\CustomerCreate.cs" />
     <Compile Include="Customer\CustomerDetails.cs" />
@@ -90,5 +91,6 @@
       <Name>Marketplace.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
