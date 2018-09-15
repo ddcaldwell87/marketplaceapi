@@ -79,6 +79,11 @@
     <Compile Include="Customer\CustomerCreate.cs" />
     <Compile Include="Customer\CustomerDetails.cs" />
     <Compile Include="Customer\CustomerListItem.cs" />
+    <Compile Include="Product\ProductCreate.cs" />
+    <Compile Include="Product\ProductDelete.cs" />
+    <Compile Include="Product\ProductDetails.cs" />
+    <Compile Include="Product\ProductEdit.cs" />
+    <Compile Include="Product\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

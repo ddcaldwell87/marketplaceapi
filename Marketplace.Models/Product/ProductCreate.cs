@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Data
+namespace Marketplace.Models.Product
 {
-    public class Product
+    public class ProductCreate
     {
-        [Key]
         public int ProductId { get; set; }
 
         [Required]
@@ -28,6 +27,7 @@ namespace Marketplace.Data
 
         [Required]
         public double ProductQuantity { get; set; }
+
         public bool ProductOnSale { get; set; }
 
         [Required]
