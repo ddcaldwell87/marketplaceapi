@@ -13,7 +13,7 @@ namespace Marketplace.WebApi.Controllers
     [Authorize]
     public class CustomerController : ApiController
     {
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IHttpActionResult GetAll()
         {
             CustomerService customerService = CreateCustomerService();

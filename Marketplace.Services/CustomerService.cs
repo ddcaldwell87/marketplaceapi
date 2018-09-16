@@ -37,6 +37,10 @@ namespace Marketplace.Services
                         CustomerEmail = entity.CustomerEmail,
                         ShippingInformation = entity.ShippingInformation,
                         CustomerPhone = entity.CustomerPhone,
+                        CustomerStreetAddress = entity.CustomerStreetAddress,
+                        State = entity.State,
+                        City = entity.City,
+                        Zip = entity.Zip
                     };
             }
         }
@@ -57,7 +61,7 @@ namespace Marketplace.Services
                 entity.City = model.City;
                 entity.State = model.State;
                 entity.Zip = model.Zip;
-                entity.ShippingInformation = $"{model.CustomerStreetAddress}/n" + $"{model.City}, {model.State} {model.Zip}";
+                //entity.ShippingInformation = $"{model.CustomerStreetAddress}/n" + $"{model.City}, {model.State} {model.Zip}";
 
                 return ctx.SaveChanges() == 1;
             }
@@ -72,6 +76,10 @@ namespace Marketplace.Services
                    CustomerLastName = model.CustomerLastName,
                    CustomerEmail = model.CustomerEmail,
                    CustomerPhone = model.CustomerPhone,
+                   CustomerStreetAddress = model.CustomerStreetAddress,
+                   State = model.State,
+                   City = model.City,
+                   Zip = model.Zip
                };
 
             using (var ctx = new ApplicationDbContext())
@@ -109,7 +117,11 @@ namespace Marketplace.Services
                                 CustomerLastName= e.CustomerLastName,
                                 CustomerEmail = e.CustomerEmail,
                                 CustomerPhone = e.CustomerPhone,
-                                ShippingInformation = $"{e.CustomerStreetAddress}/n" + $"{e.City}, {e.State} {e.Zip}"
+                                CustomerStreetAddress = e.CustomerStreetAddress,
+                                State = e.State,
+                                City = e.City,
+                                Zip = e.Zip
+                                //ShippingInformation = $"{e.CustomerStreetAddress}/n" + $"{e.City}, {e.State} {e.Zip}"
                             });
 
                 return customers.ToList();
