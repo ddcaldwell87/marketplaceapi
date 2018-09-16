@@ -119,7 +119,7 @@ namespace Marketplace.Services
             }
         }
 
-        public bool DeleteNote(int productId)
+        public bool DeleteProduct(int productId)
         {
             using (var ctx = new ApplicationDbContext())
             {
