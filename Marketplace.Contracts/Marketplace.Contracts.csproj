@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAdminService.cs" />
+    <Compile Include="IProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +86,10 @@
     <ProjectReference Include="..\Marketplace.Data\Marketplace.Data.csproj">
       <Project>{A90095B7-E715-4C65-BF37-73B0182BD35D}</Project>
       <Name>Marketplace.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marketplace.Models\Marketplace.Models.csproj">
+      <Project>{849E2EB4-C397-45EB-BF0F-05BD286A726D}</Project>
+      <Name>Marketplace.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
