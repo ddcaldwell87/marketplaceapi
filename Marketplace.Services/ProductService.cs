@@ -1,4 +1,5 @@
-﻿using Marketplace.Data;
+﻿using Marketplace.Contracts;
+using Marketplace.Data;
 using Marketplace.Models.Product;
 using System;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marketplace.Services
+namespace Marketplace.Services 
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly Guid _userId;
         private readonly int _productID;
