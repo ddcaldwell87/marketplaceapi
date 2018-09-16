@@ -13,6 +13,6 @@ namespace Marketplace.Contracts
         bool CreateProduct(ProductCreate model);
         ICollection<ProductListItem> GetAllProducts();
         bool UpdateProduct(ProductEdit model);
-        bool DeleteNote(int productId);
+        bool DeleteProduct(int productId);
     }
 }

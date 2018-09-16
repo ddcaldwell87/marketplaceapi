@@ -26,7 +26,7 @@ namespace Marketplace.WebApi.Controllers
             var product = productService.GetProductbyId(id);
             return Ok();
         }
-​
+
         public IHttpActionResult Post(ProductCreate product)
         {
             if (!ModelState.IsValid)
@@ -39,7 +39,7 @@ namespace Marketplace.WebApi.Controllers
 
             return Ok();
         }
-​
+
         public IHttpActionResult Put(ProductEdit product)
         {
             if (!ModelState.IsValid)
@@ -52,7 +52,7 @@ namespace Marketplace.WebApi.Controllers
 
             return Ok();
         }
-​
+
         public IHttpActionResult Delete(int id)
         {
             var service = CreateProductService();
