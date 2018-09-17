@@ -12,8 +12,8 @@ using System.Web.Http;
 
 namespace Marketplace.WebApi.Controllers
 {
-    public class RetailerService : ApiController
-    {
+    public class RetailerController : ApiController
+    {   
         public IHttpActionResult GetAll()
         {
             RetailerService RetailerService = CreateRetailerService();
@@ -23,7 +23,7 @@ namespace Marketplace.WebApi.Controllers
         public IHttpActionResult Get(int id)
         {
             RetailerService customerService = CreateRetailerService();
-            var retailer = customerService.GetRetailerById(id);
+            var retailer = customerService.GetRetailerbyId(id);
             return Ok(retailer);
         }
         public IHttpActionResult Post(RetailerCreate retailer)
@@ -41,12 +41,15 @@ namespace Marketplace.WebApi.Controllers
         public IHttpActionResult Put(RetailerEdit retailer)
         {   
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+                return BadRequest(ModelState);  
 
             var service = CreateRetailerService();
 
-            if (!service.UpdateRetailer(retailer))  
+            if (!service.UpdateRetailer(retailer))
+            {
                 return InternalServerError();
+            }
+                  
 
             return Ok();
         }

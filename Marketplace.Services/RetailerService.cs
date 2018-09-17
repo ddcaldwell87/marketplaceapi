@@ -96,7 +96,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool UpdateRetailer(Retailer model)
+        public bool UpdateRetailer(RetailerEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
