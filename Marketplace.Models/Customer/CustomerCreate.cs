@@ -9,7 +9,6 @@ namespace Marketplace.Models.Customer
 {
      public class CustomerCreate
     {
-        
         public int CustomerId { get; set; }
         [Required]
         public string CustomerFirstName { get; set; }
@@ -27,16 +26,5 @@ namespace Marketplace.Models.Customer
         public string City { get; set; }
         [Required]
         public string Zip { get; set; }
-        private string _shippingInformation;
-        public string ShippingInformation
-        {
-            get { return _shippingInformation; }
-            set
-            {
-                _shippingInformation = $"{CustomerStreetAddress}\n" +
-                                       $"{City}, {State} {Zip}";
-            }
-        }
-
     }
 }

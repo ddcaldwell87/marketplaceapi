@@ -1,4 +1,5 @@
-﻿using Marketplace.Models.Customer;
+﻿using Marketplace.Models;
+using Marketplace.Models.Customer;
 using Marketplace.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -41,10 +42,18 @@ namespace Marketplace.WebApi.Controllers
             return Ok();
         }
 
-        //public IHttpActionResult Put(CustomerEdit customer)
-        //{
-        //    return Ok();
-        //}
+        public IHttpActionResult Put(CustomerEdit customer)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateCustomerService();
+
+            if (!service.UpdateCustomer(customer))
+                return InternalServerError();
+
+            return Ok();
+        }
 
         //public IHttpActionResult Delete(CustomerDelete customer)
         //{
