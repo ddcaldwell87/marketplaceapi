@@ -1,5 +1,4 @@
-﻿using Marketplace.Models;
-using Marketplace.Models.Retailer;
+﻿using Marketplace.Models.Retailer;
 using Marketplace.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -9,11 +8,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-
 namespace Marketplace.WebApi.Controllers
 {
     public class RetailerController : ApiController
-    {   
+    {
         public IHttpActionResult GetAll()
         {
             RetailerService RetailerService = CreateRetailerService();
@@ -39,9 +37,9 @@ namespace Marketplace.WebApi.Controllers
             return Ok();
         }
         public IHttpActionResult Put(RetailerEdit retailer)
-        {   
+        {
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);  
+                return BadRequest(ModelState);
 
             var service = CreateRetailerService();
 
@@ -49,7 +47,7 @@ namespace Marketplace.WebApi.Controllers
             {
                 return InternalServerError();
             }
-                  
+
 
             return Ok();
         }
@@ -62,5 +60,4 @@ namespace Marketplace.WebApi.Controllers
         }
     }
 }
-
 
