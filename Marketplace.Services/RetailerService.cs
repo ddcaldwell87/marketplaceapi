@@ -61,7 +61,6 @@ namespace Marketplace.Services
 
         public ICollection<RetailerListItem> GetAllRetailers()
         {
-
             using (var ctx = new ApplicationDbContext())
             {
                 var Retailer =

@@ -85,6 +85,9 @@
     <Compile Include="Product\ProductEdit.cs" />
     <Compile Include="Product\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retailer\RetailerCreate.cs" />
+    <Compile Include="Retailer\RetailerDetails.cs" />
+    <Compile Include="Retailer\RetailerListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
