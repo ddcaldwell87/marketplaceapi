@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Marketplace.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -37,6 +38,7 @@ namespace Marketplace.Models.Product
         public string ProductDescription { get; set; }
 
         public int RetailerId { get; set; }
+        public virtual Retailer Retailer { get; set; }
 
         public Guid OwnerId { get; set; }
 

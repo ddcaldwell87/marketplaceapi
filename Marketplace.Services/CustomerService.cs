@@ -31,6 +31,7 @@ namespace Marketplace.Services
                 return
                     new CustomerDetails
                     {
+                        OwnerId = entity.OwnerId,
                         CustomerId = entity.CustomerId,
                         CustomerFirstName = entity.CustomerFirstName,
                         CustomerLastName = entity.CustomerLastName,
@@ -69,6 +70,7 @@ namespace Marketplace.Services
             var entity =
                new Customer
                {
+                   OwnerId = _userId,
                    CustomerId = _customerID,
                    CustomerFirstName = model.CustomerFirstName,
                    CustomerLastName = model.CustomerLastName,
