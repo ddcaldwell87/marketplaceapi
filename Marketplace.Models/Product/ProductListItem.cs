@@ -28,6 +28,6 @@ namespace Marketplace.Models.Product
 
         public Guid OwnerId { get; set; }
 
-        public byte[] ProductImage { get; set; }
+        public string ProductImage { get; set; }
     }
 }

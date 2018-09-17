@@ -35,7 +35,6 @@ namespace Marketplace.Services
                         CustomerFirstName = entity.CustomerFirstName,
                         CustomerLastName = entity.CustomerLastName,
                         CustomerEmail = entity.CustomerEmail,
-                        ShippingInformation = entity.ShippingInformation,
                         CustomerPhone = entity.CustomerPhone,
                         CustomerStreetAddress = entity.CustomerStreetAddress,
                         State = entity.State,
@@ -61,7 +60,6 @@ namespace Marketplace.Services
                 entity.City = model.City;
                 entity.State = model.State;
                 entity.Zip = model.Zip;
-                //entity.ShippingInformation = $"{model.CustomerStreetAddress}/n" + $"{model.City}, {model.State} {model.Zip}";
 
                 return ctx.SaveChanges() == 1;
             }
@@ -122,7 +120,6 @@ namespace Marketplace.Services
                                 State = e.State,
                                 City = e.City,
                                 Zip = e.Zip
-                                //ShippingInformation = $"{e.CustomerStreetAddress}/n" + $"{e.City}, {e.State} {e.Zip}"
                             });
 
                 return customers.ToList();

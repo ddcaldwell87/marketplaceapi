@@ -27,13 +27,7 @@ namespace Marketplace.Data
         public string State { get; set; }
         [Required]
         public string Zip { get; set; }
-        private string _shippingInformation;
-        public string ShippingInformation
-        {
-            get { return _shippingInformation; }
-            set { _shippingInformation = $"{CustomerStreetAddress}\n" +
-                                         $"{City}, {State} {Zip}"; }
-        }
+
         public Guid OwnerId { get; set; }
     }
 }

@@ -28,6 +28,7 @@ namespace Marketplace.Data
 
         [Required]
         public double ProductQuantity { get; set; }
+
         public bool ProductOnSale { get; set; }
 
         [Required]
@@ -37,9 +38,10 @@ namespace Marketplace.Data
         public string ProductDescription { get; set; }
 
         public int RetailerId { get; set; }
+        public virtual Retailer Retailer { get; set; }
 
         public Guid OwnerId { get; set; }
 
-        public byte[] ProductImage { get; set; }
+        public string ProductImage { get; set; }
     }
 }
