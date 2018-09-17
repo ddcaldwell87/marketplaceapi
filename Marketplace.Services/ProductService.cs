@@ -18,7 +18,7 @@ namespace Marketplace.Services
         {
             _userId = userid;
         }
-
+        
         public ProductDetails GetProductbyId(int productId)
         {
             using (var ctx = new ApplicationDbContext())
