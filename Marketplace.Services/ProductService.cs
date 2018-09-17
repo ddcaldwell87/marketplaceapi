@@ -12,11 +12,17 @@ namespace Marketplace.Services
     public class ProductService : IProductService
     {
         private readonly Guid _userId;
-        private readonly int _productID;
+        private readonly int _retailerId;
 
         public ProductService(Guid userid)
         {
             _userId = userid;
+        }
+
+        public ProductService(Guid userId, int retailerId)
+        {
+            _userId = userId;
+            _retailerId = retailerId;
         }
         
         public ProductDetails GetProductbyId(int productId)
@@ -48,7 +54,9 @@ namespace Marketplace.Services
             var entity =
                 new Product
                 {
-                    ProductId = _productID,
+                    OwnerId = _userId,
+                    ProductId = model.ProductId,
+                    RetailerId = _retailerId,
                     ProductName = model.ProductName,
                     ProductCategory = model.ProductCategory,
                     ProductCost = model.ProductCost,
