@@ -88,6 +88,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public bool DeleteCustomer(int customerid)
         {
             using (var ctx = new ApplicationDbContext())

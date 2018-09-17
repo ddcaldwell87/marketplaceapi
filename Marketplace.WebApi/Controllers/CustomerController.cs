@@ -23,7 +23,9 @@ namespace Marketplace.WebApi.Controllers
 
         public IHttpActionResult Get(int id)
         {
-            return Ok();
+            CustomerService customerService = CreateCustomerService();
+            var customer = customerService.GetCustomerById(id);
+            return Ok(customer);
         }
 
         public IHttpActionResult Post(CustomerCreate customer)
