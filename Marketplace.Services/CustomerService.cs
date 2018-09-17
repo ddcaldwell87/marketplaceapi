@@ -9,6 +9,7 @@ using Marketplace.Models.Customer;
 
 namespace Marketplace.Services
 {
+    
     public class CustomerService
     {
         private readonly Guid _userId;
@@ -88,7 +89,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
+        
         public bool DeleteCustomer(int customerid)
         {
             using (var ctx = new ApplicationDbContext())
@@ -101,7 +102,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
+        
         public ICollection<CustomerListItem> GetAllCustomers()
         {
             using (var ctx = new ApplicationDbContext())
