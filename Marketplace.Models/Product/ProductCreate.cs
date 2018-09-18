@@ -38,7 +38,6 @@ namespace Marketplace.Models.Product
         public string ProductDescription { get; set; }
 
         public int RetailerId { get; set; }
-        public virtual Retailer Retailer { get; set; }
 
         public Guid OwnerId { get; set; }
 
