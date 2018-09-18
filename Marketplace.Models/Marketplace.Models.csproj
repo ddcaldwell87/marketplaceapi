@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminUserCreate.cs" />
+    <Compile Include="Customer\CustomerDelete.cs" />
     <Compile Include="Customer\CustomerEdit.cs" />
     <Compile Include="Customer\CustomerCreate.cs" />
     <Compile Include="Customer\CustomerDetails.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Product\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Retailer\RetailerCreate.cs" />
+    <Compile Include="Retailer\RetailerDelete.cs" />
     <Compile Include="Retailer\RetailerDetails.cs" />
     <Compile Include="Retailer\RetailerEdit.cs" />
     <Compile Include="Retailer\RetailerListItem.cs" />

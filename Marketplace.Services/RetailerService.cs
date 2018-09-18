@@ -1,4 +1,5 @@
-﻿using Marketplace.Data;
+﻿using Marketplace.Contracts;
+using Marketplace.Data;
 using Marketplace.Models.Retailer;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Marketplace.Services
 {
-     public class RetailerService
+    public class RetailerService : IRetailerService
     {
         private readonly int _RetailerId;
         private readonly int _customerID;
@@ -69,14 +70,12 @@ namespace Marketplace.Services
                         .Select(
                             e => new RetailerListItem()
                             {
-
                                 RetailerId = e.RetailerId,
                                 RetailerName = e.RetailerName,
                                 RetailerEin = e.RetailerEin,
                                 RetailerAddress = e.RetailerAddress,
                                 RetailerEmail = e.RetailerEmail,
                                 RetailerPhone = e.RetailerPhone,
-
                             });
 
                 return Retailer.ToList();
@@ -114,34 +113,5 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        //public ICollection<RetailerListItem> GetProductbyRetailerName(string RetailerName)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var Retailers =
-        //            ctx
-        //                .Retailers
-        //                .Where(c => c.RetailerName == RetailerName)
-        //                .Select(
-        //                    e => new RetailerListItem()
-        //                    {
-        //                        RetailerId = e.RetailerId,
-        //                        RetailerName = e.RetailerName,
-        //                        RetailerEin = e.RetailerEin,
-        //                        RetailerAddress = e.RetailerAddress,
-        //                        RetailerEmail = e.RetailerEmail,
-        //                        RetailerPhone = e.RetailerPhone,
-
-        //                    });
-
-        //        var retailerLists = Retailers.ToList();
-
-        //        foreach (var Retailer in retailerLists)
-        //        {
-        //            Retailer.RetailerName = GetProductbyRetailerName(Retailer.RetailerId);
-        //        }
-
-        //        return retailerLists;
-        //    }
     }
 }

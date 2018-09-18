@@ -6,14 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Marketplace.Models.Customer;
+using Marketplace.Contracts;
 
 namespace Marketplace.Services
 {
-    
-    public class CustomerService
+    public class CustomerService: ICustomerService
     {
         private readonly Guid _userId;
-        private readonly int _customerID;   
+        private readonly int _customerID;
 
 
         public CustomerService(Guid userId)
@@ -66,6 +66,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public bool CreateCustomer(CustomerCreate model)
         {
             var entity =
@@ -89,7 +90,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        
+
         public bool DeleteCustomer(int customerid)
         {
             using (var ctx = new ApplicationDbContext())
@@ -98,11 +99,13 @@ namespace Marketplace.Services
                     ctx
                         .Customers
                         .Single(e => e.CustomerId == customerid && e.OwnerId == _userId);
+
                 ctx.Customers.Remove(entity);
+
                 return ctx.SaveChanges() == 1;
             }
         }
-        
+
         public ICollection<CustomerListItem> GetAllCustomers()
         {
             using (var ctx = new ApplicationDbContext())
@@ -113,10 +116,9 @@ namespace Marketplace.Services
                         .Select(
                             e => new CustomerListItem()
                             {
-                                
                                 CustomerId = e.CustomerId,
-                                CustomerFirstName= e.CustomerFirstName,
-                                CustomerLastName= e.CustomerLastName,
+                                CustomerFirstName = e.CustomerFirstName,
+                                CustomerLastName = e.CustomerLastName,
                                 CustomerEmail = e.CustomerEmail,
                                 CustomerPhone = e.CustomerPhone,
                                 CustomerStreetAddress = e.CustomerStreetAddress,

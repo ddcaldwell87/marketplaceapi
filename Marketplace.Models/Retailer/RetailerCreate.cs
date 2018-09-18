@@ -21,8 +21,7 @@ namespace Marketplace.Models.Retailer
         public string RetailerEmail { get; set; }
         [Required]
         public string RetailerPhone { get; set; }
-        //TODO: add retailer image property
-        [Required]
+
         public string Image { get; set; }
     }
 }

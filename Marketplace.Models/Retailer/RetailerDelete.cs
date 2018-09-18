@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Marketplace.Models.Retailer
 {
-     public class RetailerEdit
+    public class RetailerDelete
     {
         public int RetailerId { get; set; }
         public string RetailerName { get; set; }
@@ -15,6 +15,5 @@ namespace Marketplace.Models.Retailer
         public string RetailerAddress { get; set; }
         public string RetailerEmail { get; set; }
         public string RetailerPhone { get; set; }
-        public string Image { get; set; }
     }
 }
