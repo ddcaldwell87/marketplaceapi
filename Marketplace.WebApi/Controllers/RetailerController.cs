@@ -18,12 +18,14 @@ namespace Marketplace.WebApi.Controllers
             var retailer = RetailerService.GetAllRetailers();
             return Ok(retailer);
         }
+
         public IHttpActionResult Get(int id)
         {
             RetailerService customerService = CreateRetailerService();
             var retailer = customerService.GetRetailerbyId(id);
             return Ok(retailer);
         }
+
         public IHttpActionResult Post(RetailerCreate retailer)
         {
             if (!ModelState.IsValid)
@@ -36,6 +38,7 @@ namespace Marketplace.WebApi.Controllers
 
             return Ok();
         }
+
         public IHttpActionResult Put(RetailerEdit retailer)
         {
             if (!ModelState.IsValid)
@@ -44,10 +47,7 @@ namespace Marketplace.WebApi.Controllers
             var service = CreateRetailerService();
 
             if (!service.UpdateRetailer(retailer))
-            {
                 return InternalServerError();
-            }
-
 
             return Ok();
         }
@@ -60,5 +60,5 @@ namespace Marketplace.WebApi.Controllers
         }
     }
 }
-        
+
 

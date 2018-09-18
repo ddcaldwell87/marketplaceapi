@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace Marketplace.Models.Customer
 {
-    public class CustomerEdit
+    public class CustomerDelete
     {
-        public int CustomerId { get; set; }
         public string CustomerFirstName { get; set; }
         public string CustomerLastName { get; set; }
         public string CustomerEmail { get; set; }
-        public string CustomerPhone { get; set; }
         public string CustomerStreetAddress { get; set; }
         public string State { get; set; }
         public string City { get; set; }
         public string Zip { get; set; }
+        public string CustomerPhone { get; set; }
     }
 }
