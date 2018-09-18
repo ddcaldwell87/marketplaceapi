@@ -45,6 +45,7 @@ namespace Marketplace.Services
             var entity =
                new Retailer
                {
+                   OwnerId = _userID,
                    RetailerId = _RetailerId,
                    RetailerName = model.RetailerName,
                    RetailerEin = model.RetailerEin,
