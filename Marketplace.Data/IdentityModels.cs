@@ -48,6 +48,7 @@ namespace Marketplace.Data
         public DbSet<Retailer> Retailers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Admin> Admin { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
