@@ -91,6 +91,9 @@
     <Compile Include="Retailer\RetailerDetails.cs" />
     <Compile Include="Retailer\RetailerEdit.cs" />
     <Compile Include="Retailer\RetailerListItem.cs" />
+    <Compile Include="Transaction\TransactionCreate.cs" />
+    <Compile Include="Transaction\TransactionListItem.cs" />
+    <Compile Include="Transaction\TransactionDetails.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
