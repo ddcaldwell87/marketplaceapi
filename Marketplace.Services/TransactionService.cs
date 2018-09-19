@@ -12,24 +12,22 @@ namespace Marketplace.Services
     {
         private readonly int _customerId;
         private readonly int _productId;
-        private readonly int _transactionId;
-        public TransactionService()
-        {
 
-        }
+        public TransactionService(){ }
+
         public TransactionService(int productId, int customerId)
         {
             _productId = productId;
             _customerId = customerId;
         }
-        public TransactionDetails GetTransactionbyId(int TransactionID)
+        public TransactionDetails GetTransactionbyId(int transactionId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Transactions
-                        .Single(e => e.TransactionId == TransactionID && e.TransactionId == _transactionId);
+                        .Single(e => e.TransactionId == transactionId);
                 return
                     new TransactionDetails
                     {
@@ -49,9 +47,9 @@ namespace Marketplace.Services
             var entity =
                new Transaction
                {
-                   TransactionId = _transactionId,
-                   ProductId = _productId,
-                   CustomerId = _customerId,
+                   TransactionId = model.TransactionId,
+                   ProductId = model.ProductId,
+                   CustomerId = model.CustomerId,
                    ProductName = model.ProductName,
                    ProductPrice = model.ProductPrice,
                    ProductQuantity = model.ProductQuantity,
@@ -65,6 +63,7 @@ namespace Marketplace.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public ICollection<TransactionListItem> GetAllTransactions()
         {
             using (var ctx = new ApplicationDbContext())

@@ -11,8 +11,6 @@ namespace Marketplace.Services
 {
     public class RetailerService : IRetailerService
     {
-        private readonly int _retailerId;
-        private readonly int _customerID;
         private readonly Guid _userID;
 
         public RetailerService(Guid userId)
@@ -46,7 +44,7 @@ namespace Marketplace.Services
                new Retailer
                {
                    OwnerId = _userID,
-                   RetailerId = _retailerId,
+                   RetailerId = model.RetailerId,
                    RetailerName = model.RetailerName,
                    RetailerEin = model.RetailerEin,
                    RetailerAddress = model.RetailerAddress,

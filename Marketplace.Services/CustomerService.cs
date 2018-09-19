@@ -13,7 +13,6 @@ namespace Marketplace.Services
     public class CustomerService: ICustomerService
     {
         private readonly Guid _userId;
-        private readonly int _customerID;
 
 
         public CustomerService(Guid userId)
@@ -73,7 +72,7 @@ namespace Marketplace.Services
                new Customer
                {
                    OwnerId = _userId,
-                   CustomerId = _customerID,
+                   CustomerId = model.CustomerId,
                    CustomerFirstName = model.CustomerFirstName,
                    CustomerLastName = model.CustomerLastName,
                    CustomerEmail = model.CustomerEmail,
