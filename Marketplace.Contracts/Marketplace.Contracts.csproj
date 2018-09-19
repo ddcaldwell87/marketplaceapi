@@ -78,6 +78,7 @@
     <Compile Include="ICustomerService.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="IRetailerService.cs" />
+    <Compile Include="ITransactionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
