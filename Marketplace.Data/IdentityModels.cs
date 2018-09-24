@@ -27,12 +27,7 @@ namespace Marketplace.Data
             // Add custom user claims here
             return userIdentity;
         }
-
-        public string Role { get; set; }
     }
-
-    //TODO: Set Up Identity Models from elevennote
-
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -74,9 +69,7 @@ namespace Marketplace.Data
     {
         public IdentityUserRolerConfiguation()
         {
-            HasKey(iur => iur.RoleId);
+            HasKey(iur => iur.UserId);
         }
     }
-
-
 }

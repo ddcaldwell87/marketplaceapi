@@ -91,6 +91,15 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Migrations\201809201737069_InitialCreate.cs" />
+    <Compile Include="Migrations\201809201737069_InitialCreate.Designer.cs">
+      <DependentUpon>201809201737069_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809241435300_changedPK.cs" />
+    <Compile Include="Migrations\201809241435300_changedPK.Designer.cs">
+      <DependentUpon>201809241435300_changedPK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Retailer.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -100,6 +109,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809201737069_InitialCreate.resx">
+      <DependentUpon>201809201737069_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241435300_changedPK.resx">
+      <DependentUpon>201809241435300_changedPK.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
