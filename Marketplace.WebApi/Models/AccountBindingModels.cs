@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Security;
 using Newtonsoft.Json;
 
 namespace Marketplace.WebApi.Models
@@ -52,6 +53,7 @@ namespace Marketplace.WebApi.Models
         [Required]
         [Display(Name = "Role")]
         public string Role { get; set; }
+
     }
 
     public class RegisterExternalBindingModel
