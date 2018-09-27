@@ -24,7 +24,7 @@ namespace Marketplace.WebApi.Controllers
         {
             ProductService productService = CreateProductService();
             var product = productService.GetProductbyId(id);
-            return Ok();
+            return Ok(product);
         }
 
         public IHttpActionResult Post(ProductCreate product)
