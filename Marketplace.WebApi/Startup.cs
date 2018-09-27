@@ -35,8 +35,8 @@ namespace Marketplace.WebApi
                 userAdmin.UserName = "Admin";
                 userAdmin.Email = "admin@admin.com";
                 string passwordAdmin = "P@ssw0rd";
-                var checkUserBailey = userManager.Create(userAdmin, passwordAdmin);
-                if (checkUserBailey.Succeeded)
+                var checkUserAdmin = userManager.Create(userAdmin, passwordAdmin);
+                if (checkUserAdmin.Succeeded)
                 {
                     userManager.AddToRole(userAdmin.Id, "Admin");
                 }

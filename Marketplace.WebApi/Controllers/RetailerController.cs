@@ -51,6 +51,15 @@ namespace Marketplace.WebApi.Controllers
 
             return Ok();
         }
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateRetailerService();
+
+            if (!service.DeleteRetailer(id))
+                return InternalServerError();
+
+            return Ok();
+        }
 
         private RetailerService CreateRetailerService()
         {
