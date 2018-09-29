@@ -107,7 +107,8 @@ namespace Marketplace.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
+                        .Single(e => e.ProductId == model.ProductId);
+                        //.Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
 
                 entity.ProductCategory = model.ProductCategory;
                 entity.ProductCost = model.ProductCost;
@@ -122,7 +123,7 @@ namespace Marketplace.Services
                 entity.ProductUpc = model.ProductUpc;
                 entity.ProductUpc = model.ProductUpc;
                 entity.RetailerId = model.RetailerId;
-                entity.OwnerId = model.OwnerId;
+                //entity.OwnerId = model.OwnerId;
 
                 return ctx.SaveChanges() == 1;
             }
