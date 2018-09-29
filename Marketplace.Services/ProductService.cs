@@ -114,7 +114,7 @@ namespace Marketplace.Services
                 entity.ProductCost = model.ProductCost;
                 entity.ProductDescription = model.ProductDescription;
                 entity.ProductId = model.ProductId;
-                entity.ProductImage = model.ProductImage;
+                //entity.ProductImage = model.ProductImage;
                 entity.ProductName = model.ProductName;
                 entity.ProductOnSale = model.ProductOnSale;
                 entity.ProductPrice = model.ProductPrice;
@@ -123,7 +123,7 @@ namespace Marketplace.Services
                 entity.ProductUpc = model.ProductUpc;
                 entity.ProductUpc = model.ProductUpc;
                 entity.RetailerId = model.RetailerId;
-                //entity.OwnerId = model.OwnerId;
+                entity.OwnerId = model.OwnerId;
 
                 return ctx.SaveChanges() == 1;
             }
