@@ -38,6 +38,7 @@ namespace Marketplace.Services
                         ProductCategory = entity.ProductCategory,
                         ProductUpc = entity.ProductUpc,
                         RetailerId = entity.RetailerId,
+                        ProductQuantity = entity.ProductQuantity,
                         OwnerId = entity.OwnerId,
                     };
             }
@@ -114,7 +115,7 @@ namespace Marketplace.Services
                 entity.ProductUpc = model.ProductUpc;
                 entity.ProductUpc = model.ProductUpc;
                 entity.RetailerId = model.RetailerId;
-                entity.OwnerId = model.OwnerId;
+                
                 return ctx.SaveChanges() == 1;
             }
         }
