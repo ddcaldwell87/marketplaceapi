@@ -108,8 +108,7 @@ namespace Marketplace.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == model.ProductId);
-                        //.Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
+                        .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
 
                 entity.ProductCategory = model.ProductCategory;
                 entity.ProductCost = model.ProductCost;
