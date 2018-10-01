@@ -12,13 +12,19 @@ namespace Marketplace.Services
     public class ProductService : IProductService
     {
         private readonly Guid _userId;
-        private readonly int _productID;
+        private readonly int _retailerId;
 
         public ProductService(Guid userid)
         {
             _userId = userid;
         }
 
+        public ProductService(Guid userId, int retailerId)
+        {
+            _userId = userId;
+            _retailerId = retailerId;
+        }
+        
         public ProductDetails GetProductbyId(int productId)
         {
             using (var ctx = new ApplicationDbContext())
@@ -49,7 +55,9 @@ namespace Marketplace.Services
             var entity =
                 new Product
                 {
-                    ProductId = _productID,
+                    OwnerId = _userId,
+                    ProductId = model.ProductId,
+                    RetailerId = _retailerId,
                     ProductName = model.ProductName,
                     ProductCategory = model.ProductCategory,
                     ProductCost = model.ProductCost,
@@ -100,13 +108,14 @@ namespace Marketplace.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
+                        .Single(e => e.ProductId == model.ProductId);
+                        //.Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
 
                 entity.ProductCategory = model.ProductCategory;
                 entity.ProductCost = model.ProductCost;
                 entity.ProductDescription = model.ProductDescription;
                 entity.ProductId = model.ProductId;
-                entity.ProductImage = model.ProductImage;
+                //entity.ProductImage = model.ProductImage;
                 entity.ProductName = model.ProductName;
                 entity.ProductOnSale = model.ProductOnSale;
                 entity.ProductPrice = model.ProductPrice;
@@ -115,7 +124,7 @@ namespace Marketplace.Services
                 entity.ProductUpc = model.ProductUpc;
                 entity.ProductUpc = model.ProductUpc;
                 entity.RetailerId = model.RetailerId;
-                
+
                 return ctx.SaveChanges() == 1;
             }
         }

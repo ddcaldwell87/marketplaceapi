@@ -8,7 +8,6 @@ namespace Marketplace.Models.Product
 {
     public class ProductDetails
     {
-
         public int ProductId { get; set; }
 
         public string ProductName { get; set; }

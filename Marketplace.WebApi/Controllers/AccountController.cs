@@ -17,6 +17,7 @@ using Marketplace.WebApi.Models;
 using Marketplace.WebApi.Providers;
 using Marketplace.WebApi.Results;
 using Marketplace.Data;
+using System.Web.Security;
 
 namespace Marketplace.WebApi.Controllers
 {
@@ -113,6 +114,14 @@ namespace Marketplace.WebApi.Controllers
                 Logins = logins,
                 ExternalLoginProviders = GetExternalLogins(returnUrl, generateState)
             };
+        }
+
+        [AllowAnonymous]
+        [Route("adminCheck")]
+        [HttpGet]
+        public bool GetAdmin()
+        {
+            return User.IsInRole("Admin");
         }
 
         // POST api/Account/ChangePassword
@@ -332,6 +341,18 @@ namespace Marketplace.WebApi.Controllers
             var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
 
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+            var userResult = await UserManager.FindByEmailAsync(model.Email);
+
+            if(model.Role == "Customer")
+            {
+                var roleResult = await UserManager.AddToRoleAsync(userResult.Id, "Customer");
+            }
+
+            if(model.Role == "Retailer")
+            {
+                var roleResult = await UserManager.AddToRoleAsync(userResult.Id, "Retailer");
+            }
 
             if (!result.Succeeded)
             {

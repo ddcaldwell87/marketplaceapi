@@ -11,10 +11,10 @@ using System.Web.Http;
 
 namespace Marketplace.WebApi.Controllers
 {
-    [Authorize]
+   
     public class CustomerController : ApiController
     {
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public IHttpActionResult GetAll()
         {
             CustomerService customerService = CreateCustomerService();
@@ -55,10 +55,16 @@ namespace Marketplace.WebApi.Controllers
             return Ok();
         }
 
-        //public IHttpActionResult Delete(CustomerDelete customer)
-        //{
-        //    return Ok();
-        //}
+        [Authorize(Roles = "Admin")]
+        public IHttpActionResult Delete(int id)
+        {
+            var service = CreateCustomerService();
+
+            if (!service.DeleteCustomer(id))
+                return InternalServerError();
+
+            return Ok();
+        }
 
         private CustomerService CreateCustomerService()
         {
