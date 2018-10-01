@@ -12,7 +12,6 @@ namespace Marketplace.Models.Retailer
         public int RetailerId { get; set; }
         [Required]
         public string RetailerName { get; set; }
-        // Employer Identification Number
         [Required]
         public int RetailerEin { get; set; }
         [Required]
@@ -21,7 +20,5 @@ namespace Marketplace.Models.Retailer
         public string RetailerEmail { get; set; }
         [Required]
         public string RetailerPhone { get; set; }
-
-        public string Image { get; set; }
     }
 }

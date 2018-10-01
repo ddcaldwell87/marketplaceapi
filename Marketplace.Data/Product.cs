@@ -24,12 +24,8 @@ namespace Marketplace.Data
         [Required]
         public double ProductCost { get; set; }
 
-        public double ProductProfit { get; set; }
-
         [Required]
         public double ProductQuantity { get; set; }
-
-        public bool ProductOnSale { get; set; }
 
         [Required]
         public string ProductCategory { get; set; }
@@ -37,11 +33,6 @@ namespace Marketplace.Data
         [Required]
         public string ProductDescription { get; set; }
 
-        public int RetailerId { get; set; }
-        public virtual Retailer Retailer { get; set; }
-
         public Guid OwnerId { get; set; }
-
-        public string ProductImage { get; set; }
     }
 }
