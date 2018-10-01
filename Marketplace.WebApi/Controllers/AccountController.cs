@@ -116,6 +116,14 @@ namespace Marketplace.WebApi.Controllers
             };
         }
 
+        [AllowAnonymous]
+        [Route("adminCheck")]
+        [HttpGet]
+        public bool GetAdmin()
+        {
+            return User.IsInRole("Admin");
+        }
+
         // POST api/Account/ChangePassword
         [Route("ChangePassword")]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)

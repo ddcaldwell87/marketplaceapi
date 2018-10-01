@@ -14,7 +14,6 @@ namespace Marketplace.Data
         [Required]
         public string RetailerName { get; set; }
 
-        // Employer Identification Number
         [Required]
         public int RetailerEin { get; set; }
 
@@ -26,8 +25,6 @@ namespace Marketplace.Data
 
         [Required]
         public string RetailerPhone { get; set; }
-
-        public string Image { get; set; }
 
         public Guid OwnerId { get; set; }
     }

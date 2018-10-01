@@ -91,6 +91,15 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Migrations\201809291539057_test.cs" />
+    <Compile Include="Migrations\201809291539057_test.Designer.cs">
+      <DependentUpon>201809291539057_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810012027295_stuff.cs" />
+    <Compile Include="Migrations\201810012027295_stuff.Designer.cs">
+      <DependentUpon>201810012027295_stuff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Retailer.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -100,6 +109,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809291539057_test.resx">
+      <DependentUpon>201809291539057_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810012027295_stuff.resx">
+      <DependentUpon>201810012027295_stuff.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
