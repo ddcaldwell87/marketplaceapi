@@ -32,7 +32,7 @@ namespace Marketplace.WebApi.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateProductService(product);
+            var service = CreateProductService();
 
             if (!service.CreateProduct(product))
                 return InternalServerError();
@@ -67,13 +67,6 @@ namespace Marketplace.WebApi.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var productService = new ProductService(userId);
-            return productService;
-        }
-
-        private ProductService CreateProductService(ProductCreate product)
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var productService = new ProductService(userId, product.RetailerId);
             return productService;
         }
     }

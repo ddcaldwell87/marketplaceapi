@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Marketplace.Services 
 {
-    public class ProductService : IProductService
+    public class ProductService
     {
         private readonly Guid _userId;
         private readonly int _retailerId;
@@ -32,20 +32,19 @@ namespace Marketplace.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == productId && e.OwnerId == _userId);
+                        .Single(e => e.ProductId == productId);
                 return
                     new ProductDetails
                     {
+                        OwnerId = entity.OwnerId,
                         ProductId = entity.ProductId,
                         ProductName = entity.ProductName,
                         ProductDescription = entity.ProductDescription,
                         ProductPrice = entity.ProductPrice,
-                        ProductImage = entity.ProductImage,
+                        ProductCost = entity.ProductCost,
                         ProductCategory = entity.ProductCategory,
                         ProductUpc = entity.ProductUpc,
-                        RetailerId = entity.RetailerId,
                         ProductQuantity = entity.ProductQuantity,
-                        OwnerId = entity.OwnerId,
                     };
             }
         }
@@ -57,15 +56,11 @@ namespace Marketplace.Services
                 {
                     OwnerId = _userId,
                     ProductId = model.ProductId,
-                    RetailerId = _retailerId,
                     ProductName = model.ProductName,
                     ProductCategory = model.ProductCategory,
                     ProductCost = model.ProductCost,
                     ProductDescription = model.ProductDescription,
-                    ProductImage = model.ProductImage,
-                    ProductOnSale = model.ProductOnSale,
                     ProductPrice = model.ProductPrice,
-                    ProductProfit = model.ProductProfit,
                     ProductQuantity = model.ProductQuantity,
                     ProductUpc = model.ProductUpc,
                 };
@@ -90,9 +85,7 @@ namespace Marketplace.Services
                         ProductId = e.ProductId,
                         ProductCategory = e.ProductCategory,
                         ProductDescription = e.ProductDescription,
-                        ProductImage = e.ProductImage,
                         ProductName = e.ProductName,
-                        ProductOnSale = e.ProductOnSale,
                         ProductPrice = e.ProductPrice,
                         ProductQuantity = e.ProductQuantity,
                         ProductUpc = e.ProductUpc,
@@ -109,20 +102,15 @@ namespace Marketplace.Services
                     ctx
                         .Products
                         .Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
-
-                entity.ProductCategory = model.ProductCategory;
-                entity.ProductCost = model.ProductCost;
-                entity.ProductDescription = model.ProductDescription;
+                entity.OwnerId = model.OwnerId;
                 entity.ProductId = model.ProductId;
-                //entity.ProductImage = model.ProductImage;
                 entity.ProductName = model.ProductName;
-                entity.ProductOnSale = model.ProductOnSale;
+                entity.ProductUpc = model.ProductUpc;
                 entity.ProductPrice = model.ProductPrice;
-                entity.ProductProfit = model.ProductProfit;
+                entity.ProductCost = model.ProductCost;
                 entity.ProductQuantity = model.ProductQuantity;
-                entity.ProductUpc = model.ProductUpc;
-                entity.ProductUpc = model.ProductUpc;
-                entity.RetailerId = model.RetailerId;
+                entity.ProductDescription = model.ProductDescription;
+                entity.ProductCategory = model.ProductCategory;
 
                 return ctx.SaveChanges() == 1;
             }
