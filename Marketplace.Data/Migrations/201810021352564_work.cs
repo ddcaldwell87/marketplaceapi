@@ -3,7 +3,7 @@ namespace Marketplace.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class stuff : DbMigration
+    public partial class work : DbMigration
     {
         public override void Up()
         {

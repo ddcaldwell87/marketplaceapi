@@ -123,7 +123,7 @@ namespace Marketplace.Services
                 var entity =
                     ctx
                         .Products
-                        .Single(e => e.ProductId == productId && e.OwnerId == _userId);
+                        .Single(e => e.ProductId == productId);
 
                 ctx.Products.Remove(entity);
 
