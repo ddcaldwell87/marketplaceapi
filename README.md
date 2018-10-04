@@ -1,5 +1,5 @@
 # marketplaceapi
-Eleven Fifty Academy Red Badge Back-End Project.
+Eleven Fifty Academy Red Badge group Back-End Project.
 
 This project is designed to be a marketplace where users can sign up as a customer or a retailer. Retailers can list their products. Everyone can see all products available. Development currently in progress.
 
